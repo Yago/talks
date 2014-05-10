@@ -1,3 +1,13 @@
+body {
+  background: -moz-radial-gradient(center, circle cover, $white 0%, $grey 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $white), color-stop(100%, $grey));
+  background: -webkit-radial-gradient(center, circle cover, $white 0%, $grey 100%);
+  background: -o-radial-gradient(center, circle cover, $white 0%, $grey 100%);
+  background: -ms-radial-gradient(center, circle cover, $white 0%, $grey 100%);
+  background: radial-gradient(center, circle cover, $white 0%, $grey 100%);
+  background-color: #2b2b2b;
+}
+
 ::-moz-selection {
   background: #2580dc;
   text-shadow: none;
@@ -8,6 +18,53 @@
   text-shadow: none;
 }
 
-section {
+section.text-left {
   text-align: left;
+}
+
+section.text-right {
+  text-align: left;
+}
+
+.reveal section:first-child {
+  color: $white;
+  text-align: left;
+}
+
+.reveal img {
+  display: block;
+  width: auto;
+  margin: 0.5em auto;
+}
+
+.frag-arrow {
+  display: block;
+  float: left;
+  background: $water;
+  color: $white;
+  position: relative;
+  height: 50px;
+  line-height: 1.5em !important;
+  font-size: 30px !important;
+  margin-right: 0px !important;
+  padding: 0 35px 0 45px !important;
+  &:first-child {padding-left: 15px !important;}
+  &.mine {
+    background: $mine;
+    &:after {background: $mine;}
+  }
+}
+
+.frag-arrow:after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: -18px;
+  display: block;
+  width: 37px;
+  height: 37px;
+  background: $water;
+  z-index: 99;
+  @include rotate(45deg);
+  @include border-radius(3px);
 }

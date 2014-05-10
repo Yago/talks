@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Yann Gouffon - Alfred</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="Yann Gouffon">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/theme.css" id="theme">
+
+    <script type="text/javascript" src="//use.typekit.net/oyy3kts.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        
+          <section data-markdown data-transition="linear" data-background="#2d95e3">
+            # Meet Alfred
+          </section>
+
+          <section>
+            <p>
+              Maybe you know this kreepy little guy...
+            </p>
+            <br><br>
+            <img class="fragment" src="../img/alfred/spotlight.png">
+          </section>
+
+          <section>
+            <p>
+              Forget it and meet
+            </p>
+            <br>
+            <h3 class="fragment">
+              Alfred
+            </h3>
+          </section>
+
+          <section>
+            <h3>Tadaaah !!</h3>
+            <img src="../img/alfred/Alfred_icon.png">
+          </section>
+
+          <section>
+            <img src="../img/alfred/intro.png">
+          </section>
+
+          <section>
+            <img src="../img/alfred/basic.png">
+          </section>
+
+          <section>
+            <h3>App launcher</h3>
+            <img src="../img/alfred/alfred1.gif">
+          </section>
+
+          <section>
+            <h3>Unleash the Power !</h3>
+            <img src="../img/alfred/power.png">
+          </section>
+
+          <section>
+            <h3>Clipboard manager</h3>
+            <img src="../img/alfred/alfred2.gif">
+          </section>
+
+          <section>
+            <h3>Many features</h3>
+            <img src="../img/alfred/file.png">
+          </section>
+
+          <section>
+            <h3>Searching files</h3>
+            <img src="../img/alfred/alfred3.gif">
+          </section>
+
+          <section>
+            <h3>Control iTunes</h3>
+            <img src="../img/alfred/alfred4.gif">
+          </section>
+
+          <section>
+            <h3>Workflow !</h3>
+            <img src="../img/alfred/workflow.png">
+          </section>
+
+          <section>
+            <h3>Emoji shortcut :)</h3>
+            <img src="../img/alfred/alfred5.gif">
+          </section>
+
+          <section>
+            <h3>More complex</h3>
+            <img src="../img/alfred/workflow2.png">
+          </section>
+
+          <section>
+            <h3>Translation</h3>
+            <img src="../img/alfred/alfred6.gif">
+          </section>
+
+          <section>
+            <h3>Custom themes</h3>
+            <img src="../img/alfred/theme.png">
+          </section>
+
+          <section>
+            <h3>No more hesitation !</h3>
+            <br>
+            <a href="http://www.alfredapp.com/">www.alfredapp.com</a>
+          </section>
+
+
+      </div>
+    </div>
+
+    <script src="../plugin/jquery/jquery.min.js"></script>
+    <script src="../plugin/rainbow/rainbow.js"></script>
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        backgroundTransition: 'slide',
+
+        theme: Reveal.getQueryHash().theme,
+        transition: Reveal.getQueryHash().transition || 'default',
+
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/highlight/highlight.js', async: true},
+          { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+
+
+  </body>
+</html>

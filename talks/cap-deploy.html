@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Yann Gouffon - My deploy</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="Yann Gouffon">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/theme.css" id="theme">
+
+    <script type="text/javascript" src="//use.typekit.net/oyy3kts.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+
+          <section data-transition="linear" data-background="#2d95e3">
+            <h1>my deploy</h1>
+            <h3>Valable pour Anchor, Frog, WP,...</h3>
+          </section>
+
+          <section>
+            <h2>Settings</h2>
+            <pre><code data-language="ruby">
+# SERVER
+set :domain,  "user.hostingservice.com"
+set :user,    "user"
+  
+# NAME
+set :application, "application"
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Settings</h2>
+            <pre><code data-language="ruby">
+# REPOSITORY
+set :repository, "git@bitbucket.org:User/application-name.git"
+server "#{domain}", :app, :web, :db, :primary => true
+set :deploy_via, :copy
+set :copy_exclude, [".git", ".DS_Store"]
+set :scm, :git
+set :branch, "master"
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Settings</h2>
+            <pre><code data-language="ruby">
+# DEPLOY PARAMETERS
+set :deploy_to, "/home/user/webapps/#{application}"
+set :use_sudo, false
+set :git_shallow_clone, 1
+set :keep_releases, 10
+ssh_options[:paranoid] = false
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Settings</h2>
+            <pre><code data-language="ruby">
+# DATABASE
+set :dumpname, "dump.#{Time.now.strftime '%Y%m%d%H%M%S'}.sql"
+set :dbuser, "remote_user" 
+set :dbhost, "server.hostingservice.com"
+set :dbpassword, "PASSWORD"
+set :application_db, "remote_db_name"
+set :local_db_host, "localhost"
+set :local_db_user, "root"
+set :local_db_password, ""
+set :local_db, "local_db_name"
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Execution</h2>
+            <pre><code data-language="ruby">
+before "deploy:update_code", "db:migrate"
+after "deploy:update_code", "deploy:config_file"
+after "deploy:update_code", "deploy:cleanup"
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Migration</h2>
+            <pre><code data-language="ruby">
+namespace :db do
+  desc "Clone local DB to remote"
+  task :migrate do
+    system "mysqldump -u #{local_db_user} -B #{local_db} > dump/#{dumpname}"
+    system "ssh -C #{user}@#{domain} mysql -u #{dbuser} --password=#{dbpassword} #{application_db} < dump/#{dumpname}"
+  end
+end
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Deploy</h2>
+            <pre><code data-language="ruby">
+namespace :deploy do
+  desc <<-DESC
+  A macro-task that updates the code and fixes the symlink.
+  DESC
+  task :default do
+    transaction do
+      update_code
+      symlink
+    end
+  end
+  
+  task :update_code, :except => { :no_release => true } do
+    on_rollback { run "rm -rf #{release_path}; true" }
+    strategy.deploy!
+  end
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Deploy</h2>
+            <pre><code data-language="ruby">
+desc "Set config file"
+  task :config_file do
+    run "rm #{release_path}/anchor/config/db.php"
+    run "cp #{release_path}/anchor/config/db.php.dist #{release_path}/anchor/config/db.php"
+    run "rm #{release_path}/anchor/config/db.php.dist"
+  end
+end
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Ne pas oublier</h2>
+            <ul>
+              <li class="fragment">Configurer .htaccess</li>
+              <p class="fragment">&</p>
+              <li class="fragment">Ne pas commiter les dumps</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>So ?</h1>
+          </section>
+
+
+      </div>
+    </div>
+
+    <script src="../plugin/jquery/jquery.min.js"></script>
+    <script src="../plugin/rainbow/rainbow.js"></script>
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        backgroundTransition: 'slide',
+
+        theme: Reveal.getQueryHash().theme,
+        transition: Reveal.getQueryHash().transition || 'default',
+
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/highlight/highlight.js', async: true},
+          { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+
+
+  </body>
+</html>
