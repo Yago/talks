@@ -6,6 +6,9 @@ body {
   background: -ms-radial-gradient(center, circle cover, $white 0%, $grey 100%);
   background: radial-gradient(center, circle cover, $white 0%, $grey 100%);
   background-color: #2b2b2b;
+  &.homepage {
+    background: $white;
+  }
 }
 
 ::-moz-selection {
@@ -18,6 +21,46 @@ body {
   text-shadow: none;
 }
 
+header {
+  background: $water;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  font-family: $title;
+  font-weight: 900;
+  color: $white;
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80px;
+    float: left;
+    margin-left: 15px;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 900;
+    text-transform: uppercase;
+    float: left;
+    padding-left: 10px;
+    text-align: left;
+    margin: 5px 0;
+  }
+  a {
+    color: $white;
+    transition: color 0.3s;
+    &:hover {color: $clearWater;}
+  }
+}
+
+footer {
+  text-align: center;
+  color: darken($silver, 10%);
+  font-size: 16px;
+  padding: 50px 0;
+  a {
+    color: darken($silver, 10%);
+    &:hover {color: $water;}
+  }
+}
 section.text-left {
   text-align: left;
 }
@@ -37,7 +80,7 @@ section.text-right {
   margin: 0.5em auto;
 }
 
-.frag-arrow {
+.arrow {
   display: block;
   float: left;
   background: $water;
@@ -55,7 +98,7 @@ section.text-right {
   }
 }
 
-.frag-arrow:after {
+.arrow:after {
   content: '';
   position: absolute;
   top: 7px;
@@ -67,4 +110,27 @@ section.text-right {
   z-index: 99;
   @include rotate(45deg);
   @include border-radius(3px);
+}
+
+.talk-item {
+  display: table;
+  width: 100%;
+  height: 5em;
+  text-align: center;
+  background: lighten($mine, 10%);
+  color: $white;
+  transition: all 0.3s;
+  margin: 20px 0;
+  @include border-radius(3px);
+  h3 {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
+    line-height: 1.4em;
+  }
+  &:hover {
+    background: lighten($mine, 20%);
+    text-decoration: none;
+    color: $white;
+  }
 }
