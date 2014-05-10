@@ -1,0 +1,45 @@
+body {
+  font-family: $text;
+  font-size: 33px;
+  color: $mine;
+}
+
+.reveal {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $title;
+    font-weight: 900;
+    margin: 0.3em 0;
+  }
+  a {
+    color: $mine;
+    &:hover, &:focus, &:active {color: $water;}
+  }
+  p {
+    line-height: 1.6em;
+  }
+  blockquote, q {
+    padding: 0;
+    width: 100%;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    border-left: 10px solid $water;
+    padding-left: 4%;
+    box-sizing: border-box;
+    position: relative;
+    font-style: normal;
+    p:first-letter {
+      font-family: $title;
+      font-size: 3em;
+      line-height: 1em;
+      font-weight: bold;
+      margin-right: 5px;
+      float: left;
+      margin-top: 0.05em;
+    }
+    & + p {
+      text-align: right;
+    }
+  }
+  li {
+    padding: 0.5em 0;
+  }
+}
