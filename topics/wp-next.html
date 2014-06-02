@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Yann Gouffon - Wordpress: Next Level</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="Yann Gouffon">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/theme.css" id="theme">
+
+    <script type="text/javascript" src="//use.typekit.net/oyy3kts.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        
+          <section data-markdown data-transition="linear" data-background="#2d95e3">
+            # Wordpress
+            ### Next level
+          </section>
+
+          <section data-markdown>
+            You probably heard about,
+          </section>
+
+          <section>
+            <img src="../img/wp-next/Wordpress_logo.png">
+            <br>
+            <img class="fragment" src="../img/wp-next/yep.gif">
+          </section>
+
+          <section data-markdown>
+            Simply the most used CMS over the all internet
+            ![stats](../img/wp-next/stats.png)
+          </section>
+
+          <section class="text-left">
+            <h3>
+              Perfect for :
+            </h3>
+            <ul>
+              <li class="fragment">Blog</li>
+              <li class="fragment">Portfolio</li>
+              <li class="fragment">One page website</li>
+              <li class="fragment">...</li>
+              <li class="fragment">
+                Any kind of <strong>medium size website</strong>
+                <img src="../img/wp-next/thumbup.gif" alt="">
+              </li>
+            </ul>
+          </section>
+
+          <section class="text-left">
+            <h3>
+              Not recommended for :
+            </h3>
+            <ul>
+              <li class="fragment">E-commerce</li>
+              <li class="fragment">Social Network</li>
+              <li class="fragment">Real estate platform</li>
+              <li class="fragment">...</li>
+              <li class="fragment">
+                Any kind of <strong>huge</strong> and <strong>complex website</strong>
+                <img src="../img/wp-next/shallnot.gif" alt="">
+              </li>
+            </ul>
+          </section>
+
+          <section class="text-left">
+            <p>
+              In fact, you probably already made some magic tricks with WP, but at the end...
+            </p>
+            <img src="../img/wp-next/snow.gif" class="fragment full-img" alt="">
+          </section>
+
+          <section>
+            <h3>We have move to <br>the next level</h3>
+            <br>
+            <img src="../img/wp-next/saiyan.gif" alt="">
+          </section>
+
+          <section>
+            <h1><span class="text-blue">1.</span> Post type</h1>
+          </section>
+
+          <section class="text-left">
+            <p>
+              in your <code>function.php</code> :
+            </p>
+            <pre><code data-language="php">
+add_action( 'init', 'create_comics_post_type' );
+
+function create_comics_post_type() {
+  $args = array(
+    'public' => true,
+    'label'  => 'Comics',
+    'menu_icon' => 'dashicons-book'
+  );
+  register_post_type( 'comics', $args );
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <img src="../img/wp-next/post-type.png" alt="">
+          </section>
+
+          <section class="text-left">
+            <p>
+              To template it :
+            </p>
+            <blockquote>
+              <b>archive-{post_type}.php</b><br>
+              If your custom post type were 'product', and/or query_var = "product", WordPress would look for archive-product.php to display the archive of posts. <br><br>
+              <b>single-{post_type}.php</b><br>
+              If your custom post type were 'product', and/or query_var = "product", WordPress would look for single-product.php to display the single or permalink of the post.
+            </blockquote>
+          </section>
+
+          <section>
+            <h1><span class="text-blue">2.</span> ACF</h1>
+            <h4>(Advanced Custom Fields)</h4>
+          </section>
+
+          <section class="text-left">
+            <h3>Field Group</h3>
+            <br>
+            <blockquote>
+              ACF uses field groups to attach fields to posts. Each field group contains a <b>title</b>, <b>fields</b>, <b>location rules</b> and <b>visual settings</b>.
+            </blockquote>
+          </section>
+
+          <section>
+            <h4>Fields</h4>
+            <img src="../img/wp-next/acf-group.png" alt="">
+          </section>
+
+          <section>
+            <h4>Field type</h4>
+            <img src="../img/wp-next/acf-type.png" alt="">
+          </section>
+
+          <section>
+            <h4>Location</h4>
+            <img src="../img/wp-next/location.png" alt="">
+          </section>
+
+          <section>
+            <h4>Options</h4>
+            <img src="../img/wp-next/options.png" alt="">
+          </section>
+
+          <section>
+            <h4>Result</h4>
+            <img src="../img/wp-next/acf-result.png" alt="">
+          </section>
+
+          <section class="text-left">
+            <p>
+              To call it in the template :
+            </p>
+            <pre><code data-language="php">
+&lt;?php the_field('name_of_custom_field'); ?&gt;
+            </code></pre>
+          </section>
+
+          <section class="text-left">
+            <h3>Repeater Field</h3>
+            <br>
+            <blockquote>
+              The Repeater field acts as a table of data where you can define the columns (sub fields) and add <b>infinite rows</b>. Any type of field can be added as a sub field which gives you the potential to create very flexible templates.
+            </blockquote>
+          </section>
+
+          <section>
+            <h4>In group field</h4>
+            <img src="../img/wp-next/acf-repeater.png" alt="">
+          </section>
+
+          <section>
+            <h4>In post type</h4>
+            <img src="../img/wp-next/acf-repeater-type.png" alt="">
+          </section>
+
+          <section class="text-left">
+            <p>
+              To call it in the template :
+            </p>
+            <pre><code data-language="php">
+&lt;?php while( have_rows('pages') ): the_row(); ?&gt;
+  <h3>&lt;?php the_sub_field('page_number'); ?&gt;</h3>
+  <img src="&lt;?php echo get_sub_field('page')['url']; ?&gt;" alt="&lt;?php echo get_sub_field('page')['alt']; ?&gt;" />
+&lt;?php endwhile; ?&gt;
+            </code></pre>
+          </section>
+
+          <section class="text-left">
+            <h3>Options page</h3>
+            <br>
+            <blockquote>
+              The "options page" addon creates a <b>new menu item</b> called "Options" which can hold advanced custom field groups (just like any other edit page). You can also register multiple options pages
+            </blockquote>
+            <br>
+            <img src="../img/wp-next/options-page.png" alt="">
+          </section>
+
+          <section class="text-left">
+            <p>
+              To call it in the template :
+            </p>
+            <pre><code data-language="php">
+&lt;?php the_field('my_custom_option', 'option'); ?&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h1><span class="text-blue">3.</span> WPML</h1>
+            <h4>(WordPress Multilingual Plugin)</h4>
+          </section>
+
+          <section>
+            <img src="../img/wp-next/nope.gif" class="full-img">
+          </section>
+
+          <section class="text-left">
+            <blockquote>
+              This is the <b>less worse solution</b> for a mutlilingual website, but you have to <b>duplicate</b> all translated content...
+            </blockquote>
+          </section>
+
+          <section>
+            <h4>Create translation from article list :</h4>
+            <img src="../img/wp-next/add-lang.png" alt="">
+          </section>
+
+          <section>
+            <h4>Create translation from article :</h4>
+            <img src="../img/wp-next/add-lang2.png" alt="">
+          </section>
+
+          <section class="text-left">
+            <p>
+              To print it nicely in the template :
+            </p>
+            <pre><code data-language="php">
+function language_selector_flags(){
+    if (function_exists('icl_get_languages')) {
+        $languages = icl_get_languages('skip_missing=0&order=desc');
+        $langs = '';
+            if(!empty($languages) && count($languages) > 1){
+                $index = 0;
+                foreach($languages as $l){
+                  $class_pos = $index === 0 ? 'first': 'last';
+                    $index++;
+                    $active = $l['active'] ? ' active' : NULL;
+                    $langs .=  '<li class="lang-selector lang-selector-'.$class_pos.$active.'"><a href="'.$l['url'].'">' . strtoupper ($l['language_code']). '</a></li>';
+                }
+                $output = $langs;
+            }
+        return $output;
+    }
+}
+            </code></pre>
+            <pre><code data-language="php">
+<ul>
+  &lt;?php echo language_selector_flags(); ?&gt;
+</ul>
+            </code></pre>
+          </section>
+
+          <section>
+            <h1><span class="text-blue">4.</span> Barley</h1>
+          </section>
+
+          <section>
+            <img src="../img/wp-next/barley.gif" alt="">
+          </section>
+
+          <section>
+            <img src="../img/wp-next/wtf.gif" alt="">
+          </section>
+
+          <section class="text-left">
+            <h3>So, with Barley we can :</h3>
+            <ul>
+              <li class="fragment">Edit title</li>
+              <li class="fragment">Edit classic content</li>
+              <li class="fragment">Edit all custom fields and advanced custom fields</li>
+              <li class="fragment">Adding some pictures, video, embed thing,...</li>
+              <li class="fragment">Add a new page, article, custom post type,...</li>
+              <li class="fragment">...</li>
+              <li class="fragment">Doing all client stuff from front !</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>Conclusion</h1>
+          </section>
+
+          <section class="text-left">
+            <blockquote>
+            Without pushing Wordpress too far, we can build <b>user/editor friendly</b> and <b>content type oriented</b> website !
+            </blockquote>
+          </section>
+
+          <section class="text-left">
+          <h3>Check the links !</h3>
+            <ul>
+              <li><a href="http://wordpress.org">Wordpress</a></li>
+              <li><a href="http://www.advancedcustomfields.com/">ACF</a></li>
+              <li><a href="http://getbarley.com/editor/wp">Barley</a></li>
+            </ul>
+          </section>
+
+      </div>
+    </div>
+
+    <script src="../plugin/jquery/jquery.min.js"></script>
+    <script src="../plugin/rainbow/rainbow.js"></script>
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        backgroundTransition: 'slide',
+
+        theme: Reveal.getQueryHash().theme,
+        transition: Reveal.getQueryHash().transition || 'default',
+
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/highlight/highlight.js', async: true},
+          { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+
+
+  </body>
+</html>

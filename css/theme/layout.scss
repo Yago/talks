@@ -63,6 +63,7 @@ footer {
 }
 section.text-left {
   text-align: left;
+  img {margin: 0.5em 0;}
 }
 
 section.text-right {
@@ -78,6 +79,10 @@ section.text-right {
   display: block;
   width: auto;
   margin: 0.5em auto;
+}
+
+img.full-img {
+  width: 100% !important;
 }
 
 .arrow {

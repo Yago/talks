@@ -56,6 +56,8 @@ footer {
 
 section.text-left {
   text-align: left; }
+  section.text-left img {
+    margin: 0.5em 0; }
 
 section.text-right {
   text-align: left; }
@@ -68,6 +70,9 @@ section.text-right {
   display: block;
   width: auto;
   margin: 0.5em auto; }
+
+img.full-img {
+  width: 100% !important; }
 
 .arrow {
   display: block;
@@ -170,6 +175,14 @@ body {
 .reveal li {
   padding: 0.5em 0; }
 
+.text-blue {
+  color: #2d95e3 !important; }
+
+.reveal code {
+  border: 1px solid #9a9a9a;
+  border-radius: 5px;
+  padding: 5px 10px; }
+
 .reveal pre {
   background: #272822;
   word-wrap: break-word;
@@ -202,7 +215,7 @@ body {
   .rainbow-line .rainbow-line-number {
     text-align: right;
     display: block;
-    width: 10px;
+    width: 30px;
     float: left;
     vertical-align: top; }
     .rainbow-line .rainbow-line-number::before {
