@@ -61,7 +61,7 @@ footer {
     &:hover {color: $water;}
   }
 }
-section.text-left {
+section.text-left, .text-left {
   text-align: left;
   img {margin: 0.5em 0;}
 }

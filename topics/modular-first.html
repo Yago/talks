@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Yann Gouffon - Modular First</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="Yann Gouffon">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/theme.css" id="theme">
+
+    <script type="text/javascript" src="//use.typekit.net/oyy3kts.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        
+          <section data-markdown data-transition="linear" data-background="#2d95e3">
+            # Modular First
+          </section>
+
+          <section>
+            <p>Hi !<br> My name is <b>Yann</b> and<br> I'm Frontend developer @<b>Antistatique</b>.</p>
+            <div class="avatar-wrapper bubble">
+              <div class="avatar"><img src="../img/d2d/yann-1.png"><p>o_O</p></div>
+            </div>
+          </section>
+
+          <section class="text-left">
+            <h2>Roadmap :</h2>
+            <ol>
+              <li class="fragment"><b>Introduction</b></li>
+              <li class="fragment"><b>The concept</b></li>
+              <li class="fragment"><b>Design process</b></li>
+              <li class="fragment"><b>Dynamic Styleguide</b></li>
+              <li class="fragment"><b>Frameworks</b></li>
+              <li class="fragment"><b>Conclusion</b></li>
+            </ol>
+          </section>
+
+          <section data-markdown>
+            # Intro
+          </section>
+
+
+
+          <section data-markdown>
+            # The concept
+          </section>
+
+          <section class="text-left">
+            <h2>Atomic design</h2>
+            <br>
+            <div class="fragment">
+              <blockquote>
+                <p>
+                  Similarly, interfaces are made up of smaller components. This means <b>we can break entire interfaces down into fundamental building blocks</b> and work up from there. That’s the basic gist of atomic design.
+                </p>
+              </blockquote>
+              <p><strong><em>Brad Frost, <a href="http://bradfrostweb.com/blog/post/atomic-web-design/">Atomic Design</a></em></strong></p>
+            </div>
+            <br>
+            <p class="fragment">There are <b>five distinct levels</b> in atomic design :</p>
+            <br>
+            <ul>
+              <li class="fragment arrow">Atom</li>
+              <li class="fragment arrow mine">Molecule</li>
+              <li class="fragment arrow">Organism</li>
+              <li class="fragment arrow mine">Template</li>
+              <li class="fragment arrow">Page</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="../img/modular/atom.svg" onerror="this.onerror=null; this.src='../img/modular/atom.png'" alt="alt" />
+            <h3 class="text-uppercase">Atoms</h3>
+            <br>
+            <blockquote class="fragment">
+              <p class="text-left">
+                Atoms are the <b>basic building blocks</b> of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button.
+              </p>
+            </blockquote>
+          </section>
+
+          <section>
+            <img src="../img/modular/button.png">
+          </section>
+
+          <section>
+            <img src="../img/modular/molecule.svg" onerror="this.onerror=null; this.src='../img/modular/molecule.png'" alt="alt" />
+            <h3 class="text-uppercase">Molecules</h3>
+            <br>
+            <blockquote class="fragment">
+              <p class="text-left">
+                Molecules are <b>groups of atoms bonded together</b> and are the smallest fundamental units of a compound. These molecules take on their own properties and serve as <b>the backbone of our design systems</b>.
+              </p>
+            </blockquote>
+          </section>
+
+          <section>
+            <img src="../img/modular/search.png">
+          </section>
+
+          <section>
+            <img src="../img/modular/organism.svg" onerror="this.onerror=null; this.src='../img/modular/organism.png'" alt="alt" />
+            <h3 class="text-uppercase">Organisms</h3>
+            <br>
+            <blockquote class="fragment">
+              <p class="text-left">
+                Molecules give us some building blocks to work with, and we can now combine them together to form organisms. <b>Organisms are groups of molecules joined together</b> to form a relatively complex, distinct section of an interface.
+              </p>
+            </blockquote>
+          </section>
+
+          <section>
+            <img src="../img/modular/header.png">
+          </section>
+
+          <section>
+            <img src="../img/modular/template.svg" onerror="this.onerror=null; this.src='../img/modular/template.png'" alt="alt" />
+            <h3 class="text-uppercase">Templates</h3>
+            <br>
+            <blockquote class="fragment">
+              <p class="text-left">
+                Templates consist mostly of <b>groups of organisms stitched together to form pages</b>. It’s here where we start to see the design coming together and start seeing things like layout in action.
+              </p>
+            </blockquote>
+          </section>
+
+          <section>
+            <img src="../img/modular/template-smash.jpg">
+          </section>
+
+          <section>
+            <img src="../img/modular/page.svg" onerror="this.onerror=null; this.src='../img/modular/page.png'" alt="alt" />
+            <h3 class="text-uppercase">Pages</h3>
+            <br>
+            <blockquote class="fragment">
+              <p class="text-left">
+                P<b>ages are specific instances of templates</b>. Here, placeholder content is replaced with real representative content to give an accurate depiction of what a user will ultimately see.
+              </p>
+            </blockquote>
+          </section>
+
+          <section>
+            <img src="../img/modular/page-smash.jpg">
+          </section>
+
+          <section data-markdown>
+            # Design process
+          </section>
+
+          <section>
+            <h3 class="text-uppercase">After :</h3>
+            <br><br>
+            <ul>
+              <li class="arrow fragment">Page design</li>
+              <li class="arrow fragment mine">Page design</li>
+              <li class="arrow fragment">Validation</li>
+              <li class="arrow fragment mine">dev</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 class="text-uppercase">Now :</h3>
+            <br><br>
+            <ul>
+              <li class="arrow fragment">Element design</li>
+              <li class="arrow fragment mine">Page example</li>
+              <li class="arrow fragment">Validation</li>
+              <li class="arrow fragment mine">dev</li>
+            </ul>
+            <br><br>
+            <h3 class="fragment">&</h3>
+            <br>
+            <ul>
+              <li class="arrow fragment">Element design</li>
+              <li class="arrow fragment mine">Page example</li>
+              <li class="arrow fragment">Validation</li>
+              <li class="arrow fragment mine">dev</li>
+            </ul>
+          </section>
+
+          <section class="text-left">
+            <h3>From design to development</h3>
+            <br><br>
+            <blockquote>
+              <span class="fragment">Web development is <b>Object Oriented</b> by default,</span> <span class="fragment">so if design become so,</span> <span class="fragment">the world will be a better place.</span> <span class="fragment">To do that we have to use <b>styleguide</b> !</span>
+            </blockquote>
+          </section>
+
+          <section data-markdown>
+            # Styleguides
+          </section>
+
+          <section>
+            <h4>Old-fashioned</h4>
+            <img src="../img/modular/skype.png">
+          </section>
+
+          <section>
+            <h4>Modern way</h4>
+            <br>
+            <img src="../img/modular/cortana.jpg">
+          </section>
+
+          <section class="text-left">
+            <h2>Dynamic styleguide</h2>
+            <br>
+            <blockquote class="fragment">
+              Generate front-end documentation directly <b>from code</b>.
+            </blockquote>
+            <br>
+            <ul>
+              <li class="fragment">Easy to maintain</li>
+              <li class="fragment">Easy to use</li>
+              <li class="fragment">Better collaboration</li>
+            </ul>
+          </section>
+
+          <section>
+            <pre><code data-language="css">
+/*doc
+---
+title: Buttons
+name: a-buttons
+category: Layout - Buttons
+---
+
+```html_example
+<button type="button" class="btn btn-primary">Primary</button>
+```
+
+*/
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: $btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  // ...
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <img src="../img/modular/cortana-2.jpg">
+          </section>
+
+          <section data-markdown>
+            # Frameworks
+          </section>
+
+          <section class="text-left">
+            <blockquote>
+              <p>A structure for supporting or enclosing something else, especially <b>a skeletal support</b> used as <b>the basis for something being constructed</b>.</p>
+            </blockquote>
+
+            <p style="float:right;width:70%;">
+              <small>The American Heritage® Dictionary of the English Language, Fourth Edition copyright ©2000 by Houghton Mifflin Company</small>
+            </p>
+          </section>
+
+          <section>
+            <a href="http://getbootstrap.com"><img src="../img/modular/bootstrap.png"></a>
+          </section>
+
+          <section>
+            <a href="http://getbootstrap.com"><img src="../img/modular/bootstrap-2.png"></a>
+          </section>
+
+          <section>
+            <a href="http://getbootstrap.com"><img src="../img/modular/stats.jpg"></a>
+          </section>
+
+          <section>
+            <a href="http://foundation.zurb.com"><img src="../img/modular/foundation.png"></a>
+          </section>
+
+          <section>
+            <a href="http://purecss.io"><img src="../img/modular/pure.png"></a>
+          </section>
+
+          <section data-markdown>
+            # Conclusion
+          </section>
+
+          <section data-markdown class="text-left">
+            > T**he futur is now** and the modular approach is not an option any more. 
+          </section>
+
+      </div>
+    </div>
+
+    <script src="../plugin/jquery/jquery.min.js"></script>
+    <script src="../plugin/rainbow/rainbow.js"></script>
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        backgroundTransition: 'slide',
+
+        theme: Reveal.getQueryHash().theme,
+        transition: Reveal.getQueryHash().transition || 'default',
+
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/highlight/highlight.js', async: true},
+          { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+
+
+  </body>
+</html>

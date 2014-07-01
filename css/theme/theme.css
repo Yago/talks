@@ -54,9 +54,9 @@ footer {
     footer a:hover {
       color: #2d95e3; }
 
-section.text-left {
+section.text-left, .text-left {
   text-align: left; }
-  section.text-left img {
+  section.text-left img, .text-left img {
     margin: 0.5em 0; }
 
 section.text-right {
@@ -177,6 +177,9 @@ body {
 
 .text-blue {
   color: #2d95e3 !important; }
+
+.text-uppercase {
+  text-transform: uppercase; }
 
 .reveal code {
   border: 1px solid #9a9a9a;
