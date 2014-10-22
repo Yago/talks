@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Yann Gouffon - Modular First</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="Yann Gouffon">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/theme.css" id="theme">
+
+    <script type="text/javascript" src="//use.typekit.net/oyy3kts.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        
+          <section data-markdown data-transition="linear" data-background="#2d95e3">
+            # Modular First
+          </section>
+
+          <section>
+            <p><b>Yann Gouffon</b> (@Yago_0),<br>développeur front-end @<b>Antistatique</b>.</p>
+            <div class="avatar-wrapper bubble">
+              <div class="avatar"><img src="../img/d2d/yann-1.png"><p>&lt;/&gt;</p></div>
+            </div>
+          </section>
+
+          <section class="text-left">
+            <h2>Programme :</h2>
+            <ol>
+              <li class="fragment"><b>Introduction</b></li>
+              <li class="fragment"><b>Le concept</b></li>
+              <li class="fragment"><b>Design process</b></li>
+              <li class="fragment"><b>Styleguides</b></li>
+              <li class="fragment"><b>Frameworks</b></li>
+              <li class="fragment"><b>Conclusion</b></li>
+            </ol>
+          </section>
+
+          <section>
+            <h3>Votre site est terminé</h3>
+          </section>
+
+          <section>
+            <h3>vous êtes satisfait<span class="fragment">, mais...</span></h3>
+          </section>
+
+          <section>
+            <div class="avatar-wrapper bubble">
+              <div class="avatar"><img src="../img/modular/client-1.jpg"><p style="font-size:20px;">J'aimerai ajouter une nouvelle page à mon site.</p></div>
+              <div class="avatar"><img src="../img/modular/designer-1.jpg" class="fragment"><p class="fragment" style="font-size:20px;">Ça fera 5 jours de travail</p></div>
+            </div>
+          </section>
+
+          <section>
+            <div class="avatar-wrapper bubble">
+              <div class="avatar"><img src="../img/modular/client-2.jpg"><p><img src="../img/modular/monney.gif" alt=""></p></div>
+              <div class="avatar"><div class="fragment"><img src="../img/d2d/yann-5.png"><p style="font-size:20px;">Ou 1 petit jour en modular first !</p></div></div>
+            </div>
+          </section>
+
+          <section>
+            <div class="avatar-wrapper bubble">
+              <div class="avatar"><img src="../img/modular/client-1.jpg"><p><img src="../img/modular/happy.gif" alt=""></p></div>
+              <div class="avatar"><img src="../img/d2d/yann-5.png"><p style="font-size:20px;">Ou 1 petit jour en modular first !</p></div>
+            </div>
+          </section>
+
+          <section>
+            <div class="avatar-wrapper bubble">
+              <div class="avatar"><img src="../img/modular/client-2.jpg"><p><img src="../img/modular/monney.gif" alt=""></p></div>
+              <div class="avatar"><img src="../img/d2d/yann-8.png"><p style="font-size:20px;">Mais c'est trop tard...</p></div>
+              <div class="avatar"><img src="../img/modular/designer-2.jpg"></div>
+            </div>
+          </section>
+
+          <section data-markdown>
+            # Le concept
+          </section>
+
+          <section class="text-left">
+            <h2>Atomic design</h2>
+            <br>
+            <div class="fragment">
+              <blockquote>
+                <p>
+                  Similarly, interfaces are made up of smaller components. This means <b>we can break entire interfaces down into fundamental building blocks</b> and work up from there. That’s the basic gist of atomic design.
+                </p>
+              </blockquote>
+              <p><strong><em>Brad Frost, <a href="http://bradfrostweb.com/blog/post/atomic-web-design/">Atomic Design</a></em></strong></p>
+            </div>
+            <br>
+            <p class="fragment">Il y a <b>5 niveaux distincts</b> dans le design atomique :</p>
+            <br>
+            <ul>
+              <li class="fragment arrow">Atome</li>
+              <li class="fragment arrow mine">Molécule</li>
+              <li class="fragment arrow">Organisme</li>
+              <li class="fragment arrow mine">Template</li>
+              <li class="fragment arrow">Page</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="../img/modular/atom.svg" onerror="this.onerror=null; this.src='../img/modular/atom.png'" alt="alt" />
+            <h3 class="text-uppercase">Atomes</h3>
+            <br>
+            <blockquote class="fragment">
+              <p class="text-left">
+                Les atomes sont le <b>matériel de base</b> de construction. Appliqué à une interface web, les atomes correspondent aux balises HTML, comme les champs de formulaire, les boutons et liens.
+              </p>
+            </blockquote>
+          </section>
+
+          <section>
+            <img style="display:inline;" src="../img/modular/button.png">
+            <div style="display:inline;" class="fragment">
+              <h1 style="display:inline;position:relative;top:-70px;">&nbsp;&nbsp;=</h1>
+              <img style="display:inline;" src="../img/modular/lego.png">
+            </div>
+          </section>
+
+          <section>
+            <img src="../img/modular/molecule.svg" onerror="this.onerror=null; this.src='../img/modular/molecule.png'" alt="alt" />
+            <h3 class="text-uppercase">Molécules</h3>
+            <br>
+            <blockquote class="fragment">
+              <p class="text-left">
+                Les molécules sont <b>des groupes d'atomes</b> et sont les plus petites unités fondamentales d'un composant. Ces molécules ont leurs propres propriétés et servent <b>d'épine dorsale</b> à nos interfaces.
+              </p>
+            </blockquote>
+          </section>
+
+          <section>
+            <img style="display:inline;" src="../img/modular/search.png">
+            <div style="display:inline;" class="fragment">
+              <h1 style="display:inline;">=</h1>
+              <img style="display:inline;" src="../img/modular/legos.png">
+            </div>
+          </section>
+
+          <section>
+            <img src="../img/modular/organism.svg" onerror="this.onerror=null; this.src='../img/modular/organism.png'" alt="alt" />
+            <h3 class="text-uppercase">Organisms</h3>
+            <br>
+            <blockquote class="fragment">
+              <p class="text-left">
+              Les molécules nous donnent des blocs de construction, et avec, nous pouvons les combiner pour former des organismes. <b>Les organismes sont des groupes de molécules</b>, assemblé pour former une section relativement complexe et distincte d'une interface.
+              </p>
+            </blockquote>
+          </section>
+
+          <section>
+            <img src="../img/modular/header.png">
+            <div style="" class="fragment">
+              <h1 style="">=</h1>
+              <img style="" src="../img/modular/house.png">
+            </div>
+          </section>
+
+          <section>
+            <img src="../img/modular/template.svg" onerror="this.onerror=null; this.src='../img/modular/template.png'" alt="alt" />
+            <h3 class="text-uppercase">Templates</h3>
+            <br>
+            <blockquote class="fragment">
+              <p class="text-left">
+                Les templates consistent principalement en des <b>groupes d'organismes</b> assemblés pour former des pages. C'est ici que nous commençons à entrevoir le résultat final de la mise en page d'une typologie.
+              </p>
+            </blockquote>
+          </section>
+
+          <section>
+            <img src="../img/modular/template-smash.jpg">
+          </section>
+
+          <section>
+            <img src="../img/modular/plan.jpg">
+          </section>
+
+          <section>
+            <img src="../img/modular/page.svg" onerror="this.onerror=null; this.src='../img/modular/page.png'" alt="alt" />
+            <h3 class="text-uppercase">Pages</h3>
+            <br>
+            <blockquote class="fragment">
+              <p class="text-left">
+                L<b>es pages</b> sont des déclinaisons d'un template. Le contenu de l'espace réservé est remplacé par le contenu réel représentant le résultat final.
+              </p>
+            </blockquote>
+          </section>
+
+          <section>
+            <img src="../img/modular/page-smash.jpg">
+          </section>
+
+          <section>
+            <img src="../img/modular/town.jpg">
+          </section>
+
+          <section data-markdown>
+            # Design process
+          </section>
+
+          <section>
+            <h3 class="text-uppercase">Avant :</h3>
+            <br><br>
+            <ul>
+              <li class="arrow fragment">Design d'une page</li>
+              <li class="arrow fragment mine">Design d'une page</li>
+              <li class="arrow fragment">OK</li>
+              <li class="arrow fragment mine">dev</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 class="text-uppercase">Maintenant :</h3>
+            <br><br>
+            <ul>
+              <li class="arrow fragment">Design d'éléments</li>
+              <li class="arrow fragment mine">Exemple de page</li>
+              <li class="arrow fragment">OK</li>
+              <li class="arrow fragment mine">dev</li>
+            </ul>
+            <br><br>
+            <h3 class="fragment">&</h3>
+            <br>
+            <ul>
+              <li class="arrow fragment">Design d'éléments</li>
+              <li class="arrow fragment mine">Exemple de page</li>
+              <li class="arrow fragment">OK</li>
+              <li class="arrow fragment mine">dev</li>
+            </ul>
+          </section>
+
+          <section class="text-left">
+            <h3>Du design au développement</h3>
+            <br><br>
+            <blockquote>
+              <span class="fragment">Le développement web est <b>Object Oriented</b> par défaut,</span> <span class="fragment">donc si le design adopte cette pratique,</span> <span class="fragment">le processus en serra que plus modulaire.</span> <span class="fragment">Pour ce faire nous utilisons des <b>styleguides</b> !</span>
+            </blockquote>
+          </section>
+
+          <section data-markdown>
+            # Les styleguides
+          </section>
+
+          <section>
+            <h4>Old-school</h4>
+            <img src="../img/modular/skype.png">
+          </section>
+
+          <section>
+            <h4>La façon moderne</h4>
+            <br>
+            <img src="../img/modular/cortana.jpg">
+          </section>
+
+          <!-- // TODO ADD CONTENT !!! -->
+
+          <section data-markdown>
+            # Les Frameworks
+          </section>
+
+          <section class="text-left">
+            <blockquote>
+              <p>Un framework est un ensemble cohérent de <b>composants logiciels structurels</b>, qui sert à <b>créer les fondations</b> ainsi que les grandes lignes de tout ou d’une partie d'un logiciel (architecture).</p>
+            </blockquote>
+
+            <p style="float:right;width:70%;">
+              <small>Wikipedia</small>
+            </p>
+          </section>
+
+          <section>
+            <a href="http://getbootstrap.com"><img src="../img/modular/bootstrap.png"></a>
+          </section>
+
+          <section>
+            <a href="http://getbootstrap.com"><img src="../img/modular/bootstrap-2.png"></a>
+          </section>
+
+          <section>
+            <a href="http://getbootstrap.com"><img src="../img/modular/stats.jpg"></a>
+          </section>
+
+          <section>
+            <a href="http://foundation.zurb.com"><img src="../img/modular/foundation.png"></a>
+          </section>
+
+          <section>
+            <a href="http://purecss.io"><img src="../img/modular/pure.png"></a>
+          </section>
+
+          <section data-markdown>
+            # Conclusion
+          </section>
+
+          <section class="text-left">
+            <ul>
+              <li class="fragment">À mettre en pratique <b>dès le début</b></li>
+              <li class="fragment">Approche modulaire dans le <b>design</b> et l'<b>intégration</b></li>
+              <li class="fragment">Simplifie la création de nouvelles typologies</li>
+              <li class="fragment">Plus long à mettre en place, mais <b>plus rentable</b> sur le long terme.</li>
+              <li class="fragment">Meilleurs compréhension du design</li>
+              <li class="fragment">Permet au site <b>d'évoluer progressivement</b></li>
+            </ul>
+          </section>
+
+          <section data-markdown class="text-left">
+            > L**e futur est maintenant** et l'approche modulaire n'est plus une option, il s'agit d'**un standard incontournable** dans l'élaboration d'un site internet.
+          </section>
+
+          <section>
+          <div class="avatar-wrapper bubble">
+              <div class="avatar"><img src="../img/d2d/yann-8.png"><p>Merci !</p></div>
+            </div>
+          </section>
+
+      </div>
+    </div>
+
+    <script src="../plugin/jquery/jquery.min.js"></script>
+    <script src="../plugin/rainbow/rainbow.js"></script>
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        backgroundTransition: 'fade',
+
+        theme: Reveal.getQueryHash().theme,
+        transition: Reveal.getQueryHash().transition || 'fade',
+
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/highlight/highlight.js', async: true},
+          { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+
+
+  </body>
+</html>
