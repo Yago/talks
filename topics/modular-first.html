@@ -39,8 +39,12 @@
     <div class="reveal">
       <div class="slides">
         
-          <section data-markdown data-transition="linear" data-background="#2d95e3">
-            # Modular First
+          <section data-transition="linear" data-background="#2d95e3">
+            <h1>Modular First</h1>
+            <br>
+            <div style="max-width:500px;">
+              <img src="../img/softshake/banner.png" alt="">
+            </div>
           </section>
 
           <section>
@@ -304,6 +308,64 @@
 
           <section>
             <pre><code data-language="css">
+/*
+# Button
+
+Some **Markdown** content about buttons.
+
+````
+<a class="btn">Action</a>
+````
+*/
+
+.btn{
+  color: green;
+}
+
+            </code></pre>
+          </section>
+
+          <section>
+            <iframe src="http://localhost/Cortana-example/layout_-_buttons.html" width="100%" height="800" frameborder="0"></iframe>
+          </section>
+
+          <section>
+            <h3>Hologram</h3>
+            <br><br>
+            <a href="http://trulia.github.io/hologram/"><img src="../img/front/hologram.png" alt=""></a>
+          </section>
+
+          <section>
+            <pre><code data-language="shell">
+$ gem install hologram
+$ cd path/to/your/project/directory/
+$ hologram
+            </code></pre>
+          </section>
+
+          <section class="text-left">
+            <p>
+              hologram_config.yml
+            </p>
+            <pre><code data-language="yml">
+source: ./sass
+
+destination: ./docs
+
+documentation_assets: ./theme
+
+dependencies:
+  - ./build
+
+index: README
+            </code></pre>
+          </section>
+
+          <section class="text-left">
+            <p>
+              button.scss
+            </p>
+            <pre><code data-language="css">
 /*doc
 ---
 title: Buttons
@@ -311,25 +373,83 @@ name: a-buttons
 category: Layout - Buttons
 ---
 
+Some *markdown* content
+
 ```html_example
 <button type="button" class="btn btn-primary">Primary</button>
 ```
-
 */
 
 .btn {
-  display: inline-block;
-  margin-bottom: 0; // For input.btn
-  font-weight: $btn-font-weight;
-  text-align: center;
-  vertical-align: middle;
-  // ...
+  border-radius: 4px;
+  position: relative;
 }
+
             </code></pre>
           </section>
 
           <section>
-            <iframe src="http://localhost/Cortana-example/layout_-_buttons.html" width="100%" height="800" frameborder="0"></iframe>
+            <img src="../img/front/holo-demo.png" alt="">
+          </section>
+
+          <section>
+            <h3>Cortana</h3>
+            <p>
+              <br>
+              <a href="https://github.com/Yago/Cortana">Github</a>
+            </p>
+          </section>
+
+          <section>
+            <img src="../img/front/cortana.png" alt="">
+          </section>
+
+          <section class="text-left">
+            <p>
+              Bower package
+            </p>
+            <pre><code data-language="shell">
+$ bower install --save-dev Cortana
+            </code></pre>
+          </section>
+
+          <section class="text-left">
+            <p>
+              hologram_config.yml
+            </p>
+            <pre><code data-language="yml">
+source: assets
+destination: styleguide
+documentation_assets: bower_components/Cortana
+
+custom_markdown: bower_components/Cortana/CortanaMarkdownRenderer.rb
+
+index: README
+dependencies:
+  - build/js
+  - build/css
+  - build/fonts
+
+css_include:
+  - 'css/vendors.css'
+  - 'css/tdh.css'
+
+js_include:
+  - 'js/vendors.min.js'
+  - 'js/main.js'
+
+name_scope: ' - '
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Gulp !</h3>
+            <br>
+            <a href="http://gulpjs.com/"><img src="../img/front/gulp.png" alt=""></a>
+          </section>
+
+          <section>
+            <video src="../img/softshake/demo.m4v" data-autoplay controls="controls" width="960" height="540"></video>
           </section>
 
           <section data-markdown>
@@ -371,6 +491,12 @@ category: Layout - Buttons
             <h3>Un futur pas si lointain</h3>
           </section> -->
 
+          <section>
+            <h2>Futur proche ?</h2>
+            <br>
+            <a href="http://www.polymer-project.org/"><img class="fragment" src="../img/front/poly.svg" alt=""></a>
+          </section>
+
           <section data-markdown>
             # Conclusion
           </section>
@@ -391,9 +517,11 @@ category: Layout - Buttons
           </section>
 
           <section>
-          <div class="avatar-wrapper bubble">
+            <div class="avatar-wrapper bubble">
               <div class="avatar"><img src="../img/d2d/yann-8.png"><p>Merci !</p></div>
             </div>
+            <br><br>
+            <p class="fragment"><a href="http://yago.github.io/talks/topics/modular-first.html#/">yago.github.io/talks/topics/modular-first.html</a></p>
           </section>
 
       </div>
