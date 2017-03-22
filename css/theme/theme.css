@@ -1,13 +1,13 @@
 body {
-  background: -moz-radial-gradient(center, circle cover, white 0%, #dedede 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, white), color-stop(100%, #dedede));
-  background: -webkit-radial-gradient(center, circle cover, white 0%, #dedede 100%);
-  background: -o-radial-gradient(center, circle cover, white 0%, #dedede 100%);
-  background: -ms-radial-gradient(center, circle cover, white 0%, #dedede 100%);
-  background: radial-gradient(center, circle cover, white 0%, #dedede 100%);
+  background: -moz-radial-gradient(center, circle cover, #FFFFFF 0%, #dedede 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #FFFFFF), color-stop(100%, #dedede));
+  background: -webkit-radial-gradient(center, circle cover, #FFFFFF 0%, #dedede 100%);
+  background: -o-radial-gradient(center, circle cover, #FFFFFF 0%, #dedede 100%);
+  background: -ms-radial-gradient(center, circle cover, #FFFFFF 0%, #dedede 100%);
+  background: radial-gradient(center, circle cover, #FFFFFF 0%, #dedede 100%);
   background-color: #2b2b2b; }
   body.homepage {
-    background: white; }
+    background: #FFFFFF; }
 
 ::-moz-selection {
   background: #2580dc;
@@ -24,7 +24,7 @@ header {
   margin-bottom: 30px;
   font-family: "museo-sans", Helvetica, sans-serif;
   font-weight: 900;
-  color: white; }
+  color: #FFFFFF; }
   header img {
     display: block;
     margin: 0 auto;
@@ -39,7 +39,7 @@ header {
     text-align: left;
     margin: 5px 0; }
   header a {
-    color: white;
+    color: #FFFFFF;
     transition: color 0.3s; }
     header a:hover {
       color: #bceafe; }
@@ -63,7 +63,7 @@ section.text-right {
   text-align: left; }
 
 .reveal section:first-child {
-  color: white;
+  color: #FFFFFF;
   text-align: left; }
 
 .reveal img {
@@ -78,7 +78,7 @@ img.full-img {
   display: block;
   float: left;
   background: #2d95e3;
-  color: white;
+  color: #FFFFFF;
   position: relative;
   height: 50px;
   line-height: 1.5em !important;
@@ -116,8 +116,8 @@ img.full-img {
   width: 100%;
   height: 5em;
   text-align: center;
-  background: #393939;
-  color: white;
+  background: #3a3a3a;
+  color: #FFFFFF;
   transition: all 0.3s;
   margin: 20px 0;
   -webkit-border-radius: 3px;
@@ -131,7 +131,7 @@ img.full-img {
   .talk-item:hover {
     background: #535353;
     text-decoration: none;
-    color: white; }
+    color: #FFFFFF; }
 
 body {
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -156,7 +156,7 @@ body {
 .reveal blockquote, .reveal q {
   padding: 0;
   width: 100%;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 0 transparent;
   border-left: 10px solid #2d95e3;
   padding-left: 4%;
   box-sizing: border-box;
@@ -293,15 +293,15 @@ pre .variable.global, pre .variable.class, pre .variable.instance {
   display: inline-block;
   position: relative;
   z-index: -1;
-  background: white;
+  background: #FFFFFF;
   height: 95%;
   padding: 0px !important;
   margin: 0 !important;
   float: left;
   line-height: 0 !important; }
   .avatar img {
-    max-height: 100%;
     max-width: 100%;
+    max-height: 200px;
     margin: 0; }
 
 .avatar p {
@@ -309,7 +309,7 @@ pre .variable.global, pre .variable.class, pre .variable.instance {
   font-size: 30px;
   text-align: left;
   position: absolute;
-  background: white;
+  background: #FFFFFF;
   bottom: 110%;
   left: 10%;
   width: auto;
@@ -332,7 +332,7 @@ pre .variable.global, pre .variable.class, pre .variable.instance {
   display: block;
   width: 0;
   z-index: 1;
-  bottom: -19px;
+  bottom: -17px;
   left: 23px; }
 
 .avatar p:before {
@@ -344,5 +344,5 @@ pre .variable.global, pre .variable.class, pre .variable.instance {
   display: block;
   width: 0;
   z-index: 0;
-  bottom: -26px;
+  bottom: -23px;
   left: 20px; }

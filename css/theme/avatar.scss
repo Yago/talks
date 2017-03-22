@@ -22,8 +22,8 @@
   float: left;
   line-height: 0 !important;
   img {
-    max-height: 100%;
     max-width: 100%;
+    max-height: 200px;
     margin: 0;
   }
 }
@@ -57,7 +57,7 @@
   display: block;
   width: 0;
   z-index: 1;
-  bottom: -19px;
+  bottom: -17px;
   left: 23px;
 }
 
@@ -70,6 +70,6 @@
   display: block;
   width: 0;
   z-index: 0;
-  bottom: -26px;
+  bottom: -23px;
   left: 20px;
 }
